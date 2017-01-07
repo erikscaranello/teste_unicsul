@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+	<h:body>
+		<ui:include src="/header.xhtml" />
+		
+	
+		<div><p>Plano de voo da nave #{planetaPlanoDeVooBean.nave.name}</p>
+		
+			<ui:repeat value="#{planetaPlanoDeVooBean.planoDeVoo.planetas}" var="item">
+            	<p>
+            		#{item.name}
+				</p>
+        	</ui:repeat>
+		</div>
+    	
+    	
+    	
+    	<ui:include src="/footer.xhtml" />
+    	
+   	</h:body>
+</html>

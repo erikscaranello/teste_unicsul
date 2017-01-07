@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+	<h:body>
+		<ui:include src="/header.xhtml" />
+		
+	
+		<div><p>clique na nave para ver os planetas de seu plano de voo:</p>
+		
+			<ui:repeat value="#{listaNavesBean.planosDeVoo}" var="item">
+            	<p>
+            		<h:outputLink value="planeta_plano_de_voo.xhtml?nave=#{item.nave.id}">
+						#{item.nave.name}
+				   </h:outputLink>
+				</p>
+        	</ui:repeat>
+		</div>
+    	
+    	
+    	
+    	<ui:include src="/footer.xhtml" />
+    	
+   	</h:body>
+</html>

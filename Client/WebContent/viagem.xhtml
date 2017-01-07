@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+	<h:body>
+		<ui:include src="/header.xhtml" />
+		
+		<div><p>#{viagemBean.mensagem}</p></div>
+	
+		<div><p>Para onde a nave #{viagemBean.nave.name} vai?:</p>
+		
+			<ui:repeat value="#{viagemBean.planetas}" var="item">
+            	<p>
+            		<h:outputLink value="viagem.xhtml?param=#{viagemBean.nave.id};#{item.id}">
+						#{item.name}
+				   </h:outputLink>
+				</p>
+        	</ui:repeat>
+		</div>
+    	
+    	<ui:include src="/footer.xhtml" />
+    	
+   	</h:body>
+</html>
